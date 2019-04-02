@@ -1,0 +1,31 @@
+{
+  "name": "cryptochain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll",
+    "start": "node index.js",
+    "dev": "npm run start-redis && nodemon index.js",
+    "dev-peer": "cross-env GENERATE_PEER_PORT='true' nodemon index.js",
+    "start-redis": "redis-server --daemonize yes"
+  },
+  "keywords": [],
+  "author": "Rayan Ramirez",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-plugin-syntax-class-properties": "^6.13.0",
+    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+    "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.0",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.3",
+    "hex-to-binary": "^1.0.1",
+    "nodemon": "^1.18.4",
+    "pubnub": "^4.21.6",
+    "redis": "^2.8.0",
+    "request": "^2.88.0"
+  }
+}
