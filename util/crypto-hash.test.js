@@ -11,4 +11,10 @@ describe("crypto-hash()", () => {
       cryptoHash("three", "two", "one")
     );
   });
+  it("produces a unique hash when the properties have changed on an input", () => {
+    const foo = {};
+    const originalHash = cryptoHash(foo);
+    foo["a"] = "a";
+    expect(cryptoHash(foo)).not.toEqual(foo);
+  });
 });
